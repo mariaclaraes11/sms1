@@ -13,4 +13,8 @@ stages:
     - output/preprocessed_data.joblib
     - output/preprocessor.joblib
   train:
-    cmd: '" -d" src/text_classification.py " -o" output/model.joblib " python" src/text_classification.py'
+    cmd: python src/text_classification.py
+    deps:
+      - src/text_classification.py
+    outs:
+      - output/model.joblib
